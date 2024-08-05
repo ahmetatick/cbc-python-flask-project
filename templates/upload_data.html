@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Flask server</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename = 'css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div>
+      <div>
+        <div>
+          <h1>Please Fill Out the Form</h1>
+          <h4>{{upload_message}}</h4>
+          <form
+            action="http://localhost:4005/upload_data/"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <p>
+              <input
+                type="text"
+                name="us_name"
+                placeholder="name"
+              />
+            </p>
+            <p>
+              <input
+                type="number"
+                name="us_age"
+                placeholder="age"
+              />
+            </p>
+            <p>
+              <input
+                type="text"
+                name="us_city"
+                placeholder="city"
+              />
+            </p>
+            <p>
+              <input
+                type="text"
+                name="us_hobby"
+                placeholder="hobby"
+              />
+            </p>
+            <p>
+              <input
+                type="submit"
+                value="submit"
+              />
+            </p>
+          </form>
+
+          <a href="/">Home</a><br />
+          <a href="/all_data/">All Data</a><br />
+          <a href="/filtered_data/">Filtered Data</a><br />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

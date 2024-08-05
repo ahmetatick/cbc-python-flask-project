@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename = 'css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div>
+      <div>
+        <div>
+          <h1>Filter</h1>
+          <form
+            action="http://localhost:4005/filtered_data/"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <p>
+              <input
+                type="text"
+                name="us_name"
+                placeholder="name"
+              />
+            </p>
+            <p>
+              <input
+                type="number"
+                name="us_age"
+                placeholder="age"
+              />
+            </p>
+            <p>
+              <input
+                type="text"
+                name="us_city"
+                placeholder="city"
+              />
+            </p>
+            <p>
+              <input
+                type="text"
+                name="us_hobby"
+                placeholder="hobby"
+              />
+            </p>
+            <p>
+              <input
+                type="submit"
+                value="Filter Data"
+              />
+            </p>
+          </form>
+          <h1>Filtered data</h1>
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>City</th>
+              <th>Hobby</th>
+            </tr>
+            {% for user_item in the_data %}
+            <tr>
+              <td>{{user_item[0]}}</td>
+              <td>{{user_item[1]}}</td>
+              <td>{{user_item[2]}}</td>
+              <td>{{user_item[3]}}</td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+    </div>
+    <a href="/">Home</a><br />
+    <a href="/upload_data/">Upload Data</a><br />
+    <a href="/all_data/">All Data</a><br />
+  </body>
+</html>

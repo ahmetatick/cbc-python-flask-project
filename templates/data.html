@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename = 'css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div>
+      <div>
+        <div>
+          <h1>All data</h1>
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>City</th>
+              <th>Hobby</th>
+            </tr>
+            {% for user_item in the_data %}
+            <tr>
+              <td>{{user_item[0]}}</td>
+              <td>{{user_item[1]}}</td>
+              <td>{{user_item[2]}}</td>
+              <td>{{user_item[3]}}</td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+    </div>
+    <a href="/">Home</a><br />
+    <a href="/upload_data/">Upload Data</a><br />
+    <a href="/filtered_data/">Filtered Data</a><br />
+  </body>
+</html>

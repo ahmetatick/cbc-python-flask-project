@@ -1,0 +1,35 @@
+body {
+    text-align: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+h1 {
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid;
+}
+
+table {
+    display: inline-block;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid navy;
+}
+
+th, td {
+    padding: 10px;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
+
+input {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
